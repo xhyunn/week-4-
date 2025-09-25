@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>반성문 생성기</title>
+<style>
+  body{font-family:"Times New Roman",serif; background:#eee; margin:20px}
+  #paper{width: 800px; height: 1100px; background-color:#fff;background-image:url('paper.png'); background-size: 100% 100%; background-repeat: no-repeat;border: 1px solid #999;position: relative; margin: 0 auto; padding: 60px 80px;
+    box-sizing: border-box;
+  }
+  h1{ text-align:center; font-size:48px; margin-bottom:40px; letter-spacing:4px; }
+  #text{ padding : 135px 5px; white-space: pre-wrap; line-height:1.8; font-size:18px; color:#111; }
+  #stamp{position:absolute; right:60px; top:40px; width:140px; height:140px; border:5px solid red; border-radius:50%; display:flex; align-items:center; justify-content:center; color:red; font-weight:bold; font-family:"Times New Roman",serif; text-align:center; box-sizing:border-box;
+  }
+  #dout{ font-size:22px; }
+</style>
+</head>
+<body>
+
+<h2>반성문 작성기</h2>
+<p>
+  내용: <input id="msg" type="text" value="저는 수업 시간에 집중하지 못했습니다."><br>
+  날짜: <input id="date" type="date" value="2025-09-17">
+</p>
+
+<div id="paper">
+  <h1>반성문</h1>
+  <div id="text">저는 수업 시간에 집중하지 못했습니다.</div>
+  <div id="stamp"><div id="dout">2025-09-17</div></div>
+</div>
+
+<script>
+  msg.oninput = function(){ text.innerHTML = msg.value; }
+  date.onchange = function(){ dout.innerHTML = date.value; }
+</script>
+</body>
+</html>
